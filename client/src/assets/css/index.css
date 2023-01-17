@@ -1,0 +1,105 @@
+body {
+  background-color: #edf2f4;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.alert-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.alert-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 500ms;
+}
+.alert-exit {
+  opacity: 1;
+}
+.alert-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 500ms;
+}
+
+.fallback-spinner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fallback-spinner.app-loader {
+  height: 100vh;
+  flex-direction: column;
+}
+.fallback-spinner.app-loader .loading {
+  margin-top: 1rem;
+}
+.fallback-spinner .loading {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fallback-spinner .loading .effect-1,
+.fallback-spinner .loading .effect-2,
+.fallback-spinner .loading .effect-3 {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-left: 3px solid #673ab7;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fallback-spinner .loading .effect-1 {
+  position: absolute;
+  animation: rotate 1s ease infinite;
+}
+.fallback-spinner .loading .effect-2 {
+  position: absolute;
+  animation: rotateOpacity 1s ease infinite 0.1s;
+}
+.fallback-spinner .loading .effect-3 {
+  -webkit-animation: rotateOpacity 1s ease infinite 0.2s;
+  animation: rotateOpacity 1s ease infinite 0.2s;
+}
+.fallback-spinner .loading .loading .effects {
+  transition: all 0.3s ease;
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes rotateOpacity {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 0.1;
+  }
+  100% {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+    opacity: 1;
+  }
+}
+
+.main-content {
+  padding-left: 16px;
+  padding-top: 14px;
+  padding-bottom: 15px;
+}
